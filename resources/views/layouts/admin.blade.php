@@ -27,8 +27,8 @@
                     class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50 {{ request()->routeIs('products.simple.*') ? 'bg-blue-100 font-bold text-blue-700' : '' }}">
                      Produtos Simples
                 </a>
-                <a href="#"
-                    class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50">
+                <a href="{{route("products.composite.index")}}"
+                    class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50 {{ request()->routeIs('products.composite.*') ? 'bg-blue-100 font-bold text-blue-700' : '' }}">
                      Produtos Composto
                 </a>
             </nav>

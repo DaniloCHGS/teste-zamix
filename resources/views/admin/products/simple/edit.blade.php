@@ -2,7 +2,7 @@
 
 @section('content')
     <x-module-header title="Editar Produto Simples" description="Altere os dados do produto abaixo." />
-    <div class="bg-white shadow rounded-lg p-6 w-full max-w-lg mx-auto">
+    <x-card class="mx-auto">
         <form method="POST" action="{{ route('products.simple.update', $product->id) }}">
             @csrf
             @method('PUT')
@@ -36,5 +36,5 @@
             <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Salvar</button>
             <a href="{{ route('products.simple.index') }}" class="ml-4 text-gray-600 hover:underline">Cancelar</a>
         </form>
-    </div>
+    </x-card>
 @endsection

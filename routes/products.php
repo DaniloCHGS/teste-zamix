@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductCompositeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
@@ -12,5 +13,11 @@ Route::prefix('produtos')->group((function () {
         Route::put('/{product}', [ProductController::class, 'simpleUpdate'])->name('products.simple.update');
         Route::get('/{product}/excluir', [ProductController::class, 'simpleDelete'])->name('products.simple.delete');
         Route::delete('/{product}', [ProductController::class, 'simpleDestroy'])->name('products.simple.destroy');
+    });
+
+    Route::prefix('compostos')->group(function () {
+        Route::get('/', [ProductCompositeController::class, 'index'])->name('products.composite.index');
+
+        Route::get('/cadastrar', [ProductCompositeController::class, 'create'])->name('products.composite.create');
     });
 }));
