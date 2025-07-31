@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('body_content')
 <div class="min-h-screen flex items-center justify-center bg-gray-50">
     <div class="w-full max-w-md p-8 space-y-6 bg-white rounded shadow">
         <h2 class="text-2xl font-bold text-center text-gray-800">Login</h2>

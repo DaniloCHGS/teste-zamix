@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-<div class="min-h-screen flex flex-col">
+@section('body_content')
     <!-- Topbar -->
     <header class="bg-white shadow px-4 py-3 flex items-center justify-between">
         <div class="text-xl font-bold text-gray-800">Dashboard</div>
@@ -46,4 +46,4 @@
         <a href="#" class="px-3 py-2 rounded text-gray-700 hover:bg-blue-50">Perfil</a>
         <a href="#" class="px-3 py-2 rounded text-gray-700 hover:bg-blue-50">Configurações</a>
     </nav>
-</div>
+@endsection
