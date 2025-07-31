@@ -7,16 +7,31 @@
         <form method="POST" action="{{ route('register') }}" class="space-y-4">
             @csrf
             <div>
-                <label for="name" class="block text-sm font-medium text-gray-700">Nome</label>
-                <input id="name" name="name" type="text" required autofocus class="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300 bg-gray-50" />
+                <div class="flex items-center justify-between">
+                    <label for="name" class="block text-sm font-medium text-gray-700">Nome</label>
+                    @error('name')
+                        <span class="text-sm text-red-600">{{ $message }}</span>
+                    @enderror
+                </div>
+                <input id="name" name="name" type="text" value="{{ old('name') }}" autofocus class="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300 bg-gray-50" />
             </div>
             <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input id="email" name="email" type="email" required class="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300 bg-gray-50" />
+                <div class="flex items-center justify-between">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    @error('email')
+                        <span class="text-sm text-red-600">{{ $message }}</span>
+                    @enderror
+                </div>
+                <input id="email" name="email" type="email" value="{{ old('email') }}" class="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300 bg-gray-50" />
             </div>
             <div>
-                <label for="password" class="block text-sm font-medium text-gray-700">Senha</label>
-                <input id="password" name="password" type="password" required class="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300 bg-gray-50" />
+                <div class="flex items-center justify-between">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Senha</label>
+                    @error('password')
+                        <span class="text-sm text-red-600">{{ $message }}</span>
+                    @enderror
+                </div>
+                <input id="password" name="password" type="password" class="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300 bg-gray-50" />
             </div>
             <div>
                 <button type="submit" class="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Cadastrar</button>
