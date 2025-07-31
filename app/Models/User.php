@@ -45,4 +45,13 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Requisições feitas pelo usuário.
+     * Relacionamento hasMany com Request.
+     */
+    public function requests()
+    {
+        return $this->hasMany(Request::class);
+    }
 }
