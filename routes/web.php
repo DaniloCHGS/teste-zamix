@@ -17,5 +17,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+
+    Route::get('/ususarios', function () {
+        return view('admin.users.index');
+    })->name('users.index');
+
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });
