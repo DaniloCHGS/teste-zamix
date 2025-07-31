@@ -11,13 +11,13 @@ class ProductController extends Controller
     public function simpleIndex()
     {
         $products = Product::where('type', 'simple')->paginate(10);
-        return view('admin.products.simple_index', compact('products'));
+        return view('admin.products.simple.index', compact('products'));
     }
 
     // Formulário de cadastro
     public function simpleCreate()
     {
-        return view('admin.products.simple_create');
+        return view('admin.products.simple.create');
     }
 
     // Armazena novo produto
@@ -52,7 +52,7 @@ class ProductController extends Controller
     // Formulário de edição
     public function simpleEdit(Product $product)
     {
-        return view('admin.products.simple_edit', compact('product'));
+        return view('admin.products.simple.edit', compact('product'));
     }
 
     // Atualiza produto
@@ -86,7 +86,7 @@ class ProductController extends Controller
     // Formulário de exclusão
     public function simpleDelete(Product $product)
     {
-        return view('admin.products.simple_delete', compact('product'));
+        return view('admin.products.simple.delete', compact('product'));
     }
 
     // Exclui produto
