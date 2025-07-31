@@ -27,7 +27,7 @@
         </aside>
         <!-- Main Content -->
         <main class="flex-1 p-6 bg-gray-50">
-            <div class="max-w-3xl">
+            <div class="">
                 @yield('content')
             </div>
         </main>
