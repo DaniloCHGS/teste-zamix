@@ -23,6 +23,14 @@
                 class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50 {{ request()->routeIs('users.*') ? 'bg-blue-100 font-bold text-blue-700' : '' }}">
                     Usuários
                 </a>
+                <a href="{{ route('products.simple.index') }}"
+                    class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50 {{ request()->routeIs('products.simple.*') ? 'bg-blue-100 font-bold text-blue-700' : '' }}">
+                     Produtos Simples
+                </a>
+                <a href="#"
+                    class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50">
+                     Produtos Composto
+                </a>
             </nav>
         </aside>
         <!-- Main Content -->
@@ -33,7 +41,7 @@
         </main>
     </div>
     <!-- Mobile Sidebar -->
-    <nav class="md:hidden bg-gray-100 border-t flex justify-around py-2">
+    <nav class="md:hidden bg-gray-100 border-t flex justify-around py-2" aria-label="Mobile sidebar navigation">
         <a href="#" class="px-3 py-2 rounded text-gray-700 hover:bg-blue-50">Início</a>
         <a href="#" class="px-3 py-2 rounded text-gray-700 hover:bg-blue-50">Perfil</a>
         <a href="#" class="px-3 py-2 rounded text-gray-700 hover:bg-blue-50">Configurações</a>
