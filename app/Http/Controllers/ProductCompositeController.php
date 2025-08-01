@@ -62,6 +62,8 @@ class ProductCompositeController extends Controller
     {
         $product->load('components');
         $simpleProducts = Product::where('type', 'simple')->get();
+
+        // Cria um array associativo [component_id => quantity] para fácil acesso na view
         $selectedComponents = $product->components->pluck('pivot.quantity', 'id')->all();
 
         return view('admin.products.composite.edit', compact('product', 'simpleProducts', 'selectedComponents'));
