@@ -24,13 +24,6 @@ Route::middleware('auth')->group(function () {
 
     require __DIR__ . '/users.php';
     require __DIR__ . '/products.php';
-
-    Route::prefix('estoque')->group(function () {
-        Route::get('/', [App\Http\Controllers\StockController::class, 'index'])->name('stocks.index');
-        Route::get('/entrada', [App\Http\Controllers\StockMovementController::class, 'createEntrada'])->name('stock_movements.create_entrada');
-        Route::post('/entrada', [App\Http\Controllers\StockMovementController::class, 'storeEntrada'])->name('stock_movements.store_entrada');
-        Route::get('/saida', [App\Http\Controllers\StockMovementController::class, 'createSaida'])->name('stock_movements.create_saida');
-        Route::post('/saida', [App\Http\Controllers\StockMovementController::class, 'storeSaida'])->name('stock_movements.store_saida');
-        Route::get('/historico', [App\Http\Controllers\StockMovementController::class, 'historico'])->name('stock_movements.historico');
-    });
+    require __DIR__ . '/stocks.php';
+    require __DIR__ . '/reports.php';
 });
