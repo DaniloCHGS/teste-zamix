@@ -31,6 +31,10 @@
                     class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50 {{ request()->routeIs('products.composite.*') ? 'bg-blue-100 font-bold text-blue-700' : '' }}">
                      Produtos Composto
                 </a>
+                <a href="{{ route('stocks.index') }}"
+                    class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50 {{ request()->routeIs('stocks.*') || request()->routeIs('stock_movements.*') ? 'bg-blue-100 font-bold text-blue-700' : '' }}">
+                     Estoque
+                </a>
             </nav>
         </aside>
         <!-- Main Content -->
