@@ -36,6 +36,10 @@
                         class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50 {{ request()->routeIs('stocks.*') || request()->routeIs('stock_movements.*') ? 'bg-blue-100 font-bold text-blue-700' : '' }}">
                         Estoque
                     </a>
+                    <a href="{{ route('requests.index') }}"
+                        class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50 {{ request()->routeIs('requests.*') ? 'bg-blue-100 font-bold text-blue-700' : '' }}">
+                        Requisições
+                    </a>
                     <a href="{{ route('relatorios.index') }}"
                         class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50 {{ request()->routeIs('relatorios.*') ? 'bg-blue-100 font-bold text-blue-700' : '' }}">
                         Relatórios
