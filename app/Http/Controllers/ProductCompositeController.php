@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductCompositeController extends Controller
@@ -13,6 +14,7 @@ class ProductCompositeController extends Controller
 
     public function create()
     {
-        return view('admin.products.composite.create');
+        $products = Product::where('type', 'simple')->get();
+        return view('admin.products.composite.create', compact('products'));
     }
 }
