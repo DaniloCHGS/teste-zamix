@@ -3,8 +3,7 @@
 @section('content')
     <x-module-header title="Cadastrar Produto Composto" description="Preencha os dados para cadastrar um novo produto composto." />
     <x-card class="mx-auto">
-    {{-- {{ route('admin.products.composite.store') }} --}}
-        <form method="POST" action="">
+        <form method="POST" action="{{route('products.composite.store')}}">
             @csrf
             <div class="mb-4">
                 <div class="flex justify-between items-center mb-2">
@@ -32,7 +31,7 @@
                     <span class="text-red-600 text-sm">{{ $message }}</span>
                 @enderror
                 <div id="components-container" class="space-y-4">
-                    @foreach ($products as $product)
+                    @foreach ($simpleProducts as $product)
                         <div class="component-item flex items-center justify-between p-4 border rounded bg-gray-50"
                             data-id="{{ $product->id }}">
                             <div class="flex items-center">

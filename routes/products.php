@@ -19,5 +19,10 @@ Route::prefix('produtos')->group((function () {
         Route::get('/', [ProductCompositeController::class, 'index'])->name('products.composite.index');
 
         Route::get('/cadastrar', [ProductCompositeController::class, 'create'])->name('products.composite.create');
+        Route::post('/', [ProductCompositeController::class, 'store'])->name('products.composite.store');
+        Route::get('/{product}/editar', [ProductCompositeController::class, 'edit'])->name('products.composite.edit');
+        Route::put('/{product}', [ProductCompositeController::class, 'update'])->name('products.composite.update');
+        Route::get('/{product}/excluir', [ProductCompositeController::class, 'delete'])->name('products.composite.delete');
+        Route::delete('/{product}', [ProductCompositeController::class, 'destroy'])->name('products.composite.destroy');
     });
 }));
