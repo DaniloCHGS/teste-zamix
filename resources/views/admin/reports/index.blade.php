@@ -45,11 +45,13 @@
                 </select>
             </div>
             <div class="flex space-x-2">
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                <button type="submit" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                    <i data-lucide="search" class="w-4 h-4 mr-2"></i>
                     Buscar Dados
                 </button>
                 @if(isset($data) && (isset($data['entrada']) || isset($data['saida'])))
-                <button type="submit" name="export_pdf" value="1" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                <button type="submit" name="export_pdf" value="1" class="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors">
+                    <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
                     Exportar PDF
                 </button>
                 @endif
@@ -164,9 +166,7 @@
         @if((!isset($data['entrada']) || count($data['entrada']) == 0) && (!isset($data['saida']) || count($data['saida']) == 0))
             <div class="bg-white shadow-md rounded-lg p-8 text-center">
                 <div class="text-gray-500 mb-4">
-                    <svg class="w-16 h-16 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
+                    <i data-lucide="bar-chart-3" class="w-16 h-16 mx-auto mb-2"></i>
                     <h3 class="text-lg font-medium">Nenhum dado encontrado</h3>
                 </div>
                 <p class="text-gray-600">Não foram encontrados registros para os filtros selecionados.</p>

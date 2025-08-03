@@ -12,9 +12,9 @@ class RequestRepository
     /**
      * Obter todas as requisições com usuário relacionado
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function getAllWithRelations(int $userId = null): Collection
+    public function getAllWithRelations(int $userId = null)
     {
         $query = Request::with(['user', 'items.product']);
 
@@ -22,7 +22,7 @@ class RequestRepository
             $query->where('user_id', $userId);
         }
 
-        return $query->latest('requested_at')->get();
+        return $query->latest('requested_at')->paginate(15);
     }
 
     /**
