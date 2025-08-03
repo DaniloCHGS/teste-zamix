@@ -23,6 +23,28 @@ class ReportController extends Controller
         return view('admin.reports.index', compact('products', 'users'));
     }
 
+    public function stockEntry(Request $request)
+    {
+        $movements = null;
+
+        if ($request->filled('start_date') && $request->filled('end_date')) {
+            $request->validate([
+                'start_date' => 'required|date',
+                'end_date' => 'required|date|after_or_equal:start_date',
+            ]);
+
+            $startDate = $request->start_date . ' 00:00:00';
+            $endDate = $request->end_date . ' 23:59:59';
+
+            $movements = StockMovement::with('product')
+                ->where('type', 'entrada')
+                ->whereBetween('created_at', [$startDate, $endDate])
+                ->get();
+        }
+
+        return view('admin.reports.stock_entry', compact('movements'));
+    }
+
     /**
      * Gera relatório baseado nos filtros
      *

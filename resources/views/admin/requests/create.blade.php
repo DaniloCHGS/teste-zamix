@@ -11,6 +11,19 @@
             @csrf
 
             <div class="mb-4">
+                <label for="user_id" class="block text-gray-700 text-sm font-bold mb-2">Atribuir a:</label>
+                <select name="user_id" id="user_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('user_id') border-red-500 @enderror">
+                    <option value="">Selecione um usuário</option>
+                    @foreach($users as $user)
+                        <option value="{{ $user->id }}" {{ old('user_id') == $user->id ? 'selected' : '' }}>{{ $user->name }}</option>
+                    @endforeach
+                </select>
+                @error('user_id')
+                    <p class="text-red-500 text-xs italic mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="mb-4">
                 <label for="requested_at" class="block text-gray-700 text-sm font-bold mb-2">Data da Requisição:</label>
                 <input type="date" name="requested_at" id="requested_at" value="{{ old('requested_at', date('Y-m-d')) }}" 
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('requested_at') border-red-500 @enderror">

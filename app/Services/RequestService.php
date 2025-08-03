@@ -25,9 +25,9 @@ class RequestService
      *
      * @return Collection
      */
-    public function getAllRequests(): Collection
+    public function getAllRequests(int $userId = null): Collection
     {
-        return $this->requestRepository->getAllWithRelations();
+        return $this->requestRepository->getAllWithRelations($userId);
     }
 
     /**

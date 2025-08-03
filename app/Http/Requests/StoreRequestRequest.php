@@ -24,6 +24,7 @@ class StoreRequestRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'user_id' => 'required|exists:users,id',
             'requested_at' => 'required|date',
             'items' => 'required|array|min:1',
             'items.*.product_id' => 'required|exists:products,id',
@@ -39,6 +40,8 @@ class StoreRequestRequest extends FormRequest
     public function messages(): array
     {
         return [
+            'user_id.required' => 'O campo usuário é obrigatório.',
+            'user_id.exists' => 'O usuário selecionado não existe.',
             'requested_at.required' => 'A data da requisição é obrigatória.',
             'requested_at.date' => 'A data da requisição deve ser uma data válida.',
             'items.required' => 'É necessário adicionar pelo menos um item à requisição.',

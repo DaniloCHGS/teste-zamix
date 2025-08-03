@@ -6,6 +6,7 @@ use App\Http\Requests\StoreRequestRequest;
 use App\Http\Requests\UpdateRequestRequest;
 use App\Models\Product;
 use App\Models\Request;
+use App\Models\User;
 use App\Services\RequestService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -32,7 +33,7 @@ class RequestController extends Controller
      */
     public function index(): View
     {
-        $requests = $this->requestService->getAllRequests();
+        $requests = $this->requestService->getAllRequests(Auth::id());
         return view('admin.requests.index', compact('requests'));
     }
 
@@ -44,7 +45,8 @@ class RequestController extends Controller
     public function create(): View
     {
         $products = Product::all();
-        return view('admin.requests.create', compact('products'));
+        $users = User::all();
+        return view('admin.requests.create', compact('products', 'users'));
     }
 
     /**
@@ -58,7 +60,7 @@ class RequestController extends Controller
         $validated = $request->validated();
 
         $requestData = [
-            'user_id' => Auth::id(),
+            'user_id' => $validated['user_id'],
             'requested_at' => $validated['requested_at'],
         ];
 

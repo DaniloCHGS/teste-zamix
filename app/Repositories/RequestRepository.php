@@ -14,9 +14,15 @@ class RequestRepository
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getAllWithRelations(): Collection
+    public function getAllWithRelations(int $userId = null): Collection
     {
-        return Request::with(['user', 'items.product'])->latest('requested_at')->get();
+        $query = Request::with(['user', 'items.product']);
+
+        if ($userId) {
+            $query->where('user_id', $userId);
+        }
+
+        return $query->latest('requested_at')->get();
     }
 
     /**
