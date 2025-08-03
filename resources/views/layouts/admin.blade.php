@@ -41,16 +41,8 @@
                         Requisições
                     </a>
                     <a href="{{ route('reports.index') }}"
-                        class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50 {{ request()->routeIs('reports.index') ? 'bg-blue-100 font-bold text-blue-700' : '' }}">
+                        class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50 {{ request()->routeIs('reports.*') ? 'bg-blue-100 font-bold text-blue-700' : '' }}">
                         Relatórios
-                    </a>
-                    <a href="{{ route('reports.stock_entry') }}"
-                        class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50 {{ request()->routeIs('reports.stock_entry') ? 'bg-blue-100 font-bold text-blue-700' : '' }}">
-                        Relatório de Entradas
-                    </a>
-                    <a href="{{ route('reports.stock_entry') }}"
-                        class="block px-3 py-2 rounded text-gray-700 hover:bg-blue-50 {{ request()->routeIs('reports.stock_entry') ? 'bg-blue-100 font-bold text-blue-700' : '' }}">
-                        Relatório de Entradas
                     </a>
                 </div>
             </nav>
