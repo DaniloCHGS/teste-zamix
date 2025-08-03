@@ -213,7 +213,7 @@ teste-zamix/
 ### 1. Clone o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/teste-zamix.git
+git clone https://github.com/DaniloCHGS/teste-zamix.git
 cd teste-zamix
 ```
 
