@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Models\Request;
 use App\Repositories\RequestRepository;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class RequestService
 {
@@ -23,9 +23,9 @@ class RequestService
     /**
      * Obter todas as requisições
      *
-     * @return Collection
+     * @return LengthAwarePaginator
      */
-    public function getAllRequests(int $userId = null): Collection
+    public function getAllRequests(int $userId = null): LengthAwarePaginator
     {
         return $this->requestRepository->getAllWithRelations($userId);
     }
