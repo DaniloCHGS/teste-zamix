@@ -149,6 +149,9 @@ teste-zamix/
 │       ├── 03_relatorio_saida_estoque.sql
 │       ├── 04_relatorio_requisicoes.sql
 │       └── README.md
+├── 📁 diagrams/
+│   ├── diagrama-der.png
+│   └── diagrama-uml.png
 ├── 📁 resources/
 │   ├── 📁 views/                    # Templates Blade
 │   │   ├── 📁 admin/                # Views administrativas
