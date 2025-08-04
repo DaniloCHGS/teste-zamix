@@ -211,4 +211,11 @@ O sistema está **100% completo** e atende a todos os requisitos do escopo:
 
 ---
 
+## 📊 Diagramas
+
+-   **Diagrama DER**: `diagrams/diagrama-der.png`
+-   **Diagrama UML**: `diagrams/diagrama-uml.png`
+
+---
+
 **🎯 SISTEMA PRONTO PARA USO! 🎯**

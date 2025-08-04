@@ -20,6 +20,7 @@
 -   [🎨 Interface e UX](#-interface-e-ux)
 -   [📈 Relatórios](#-relatórios)
 -   [🧪 Testes](#-testes)
+-   [📊 Diagramas](#-diagramas)
 -   [📚 Documentação](#-documentação)
 -   [🤝 Contribuição](#-contribuição)
 -   [📄 Licença](#-licença)
@@ -413,6 +414,15 @@ tests/
     ├── ProductTest.php
     └── RequestTest.php
 ```
+
+---
+
+## 📊 Diagramas
+
+O projeto inclui diagramas para facilitar o entendimento da arquitetura e do modelo de dados.
+
+-   **Diagrama DER**: `diagrams/diagrama-der.png`
+-   **Diagrama UML**: `diagrams/diagrama-uml.png`
 
 ---
 
